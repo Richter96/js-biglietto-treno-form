@@ -1,35 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
     <link rel="stylesheet" href="./asset/css/style.css">
     <title>Document</title>
 </head>
+
 <body>
-   <header>
-    <h1>CALCOLA IL PREZZO DEL TUO BIGLIETTO</h1>
-   </header>
-   <main>
-    <div class="container"> 
-        <select name="cars" id="age">
-            <option value="maggiorenne">Maggiorenne</option>
-            <option value="minorenne">Minorenne</option>
-            <option value="over">Over 60</option>
-        </select>
-        <input type="text" placeholder="Inserisci i km" id="TravelKm">
-        <button id="generate">GENERA</button>
-        <button id="reset">ANNULLA</button>
+    <header>
+        <h1>CALCOLA IL PREZZO DEL TUO BIGLIETTO</h1>
+    </header>
+    <main>
+        <div class="container">
+            <div class="card">
+                <div class="row text-center">
+                    <div class="col-4 py-3">
+                        <p>km percorrenza viaggio</p>
+                        <input type="text" placeholder="Inserisci i km" id="TravelKm">
+                    </div>
+                    <div class="col-4 py-3">
+                        <p>Seleziona fascia età</p>
+                        <select id="age">
+                            <option value="maggiorenne">Maggiorenne</option>
+                            <option value="minorenne">Minorenne</option>
+                            <option value="over">Over 60</option>
+                        </select>
+                    </div>
+                    <div class="col-4 py-3">
+                        <p>Nome e Cognome</p>
+                        <input type="text" id="user_name" placeholder="Inserire nome e cognome">
+                    </div>
+                    <div class="col-12 py-3">
+                        <button id="generate">GENERA</button>
+                        <button id="reset">ANNULLA</button>
+                    </div>
+
+                </div>
+
+            </div>
+            <div class="card">
+                <h2>Biglietto del Treno</h2>
+                <div class="card m-0 my-2 border-0">
+                    <div class="row">
+                        <div class="col-auto d-flex flex-column">
+                            <span>NOME PASSEGGERO</span>
+                            <span id="name_passenger"></span>
+                        </div>
+                        <div class="col-auto d-flex flex-column">
+                            <span>OFFERTA</span>
+                            <span id="type_tiket"></span>
+                        </div>
+                        <div class="col cab d-flex">
+                            <span>CARROZZA</span>
+                            <span id="cab_number"></span>
+                        </div>
+                        <div class="col d-flex flex-column">
+                            <span>CAP</span>
+                            <span id="number_cap"></span>
+                        </div>
+                        <div class="col d-flex flex-column">
+                            <span>COSTO BIGLIETTO</span>
+                            <span id="price_tiket"></span>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
 
 
+    </main>
 
-        <span id="type_tiket"></span>
-    </div>
-   </main>
-
-    <h1 id="price_tiket"></h1>
 
     <script src="./asset/js/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+            crossorigin="anonymous"></script>
 </body>
+
 </html>

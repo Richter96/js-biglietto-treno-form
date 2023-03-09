@@ -2,4 +2,18 @@
     width: 80%;
     margin: auto;
 }
+body{
+    background-color: rgb(216, 255, 164);
+}
+.card {
+    border: 1px solid rgb(255, 7, 7);
+    border-radius: 1.5rem;
+    box-shadow: 0 0 1rem rgb(0, 177, 253);
+    padding: 2rem;
+    margin: 4rem;
+    background-color: white;
+}
 
+header {
+    text-align: center;
+}

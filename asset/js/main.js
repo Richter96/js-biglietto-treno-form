@@ -18,12 +18,16 @@ Sulla base di queste informazioni dovrà calcolare il prezzo totale del viaggio,
 // division
 // modulus
 
-const generateBtn = document.getElementById("generate")
-console.log (generateBtn)
+
+
 
 // prende i dati dell'inputbox tramite il bottone
 const btnGenera = document.getElementById("generate")
-btnGenera.addEventListener('click',function(){
+
+const cabClass = document.querySelector('.cab').classList
+    cabClass.add("flex-column")
+
+btnGenera.addEventListener('click', function () {
 
     const userAge = (document.getElementById('age').value)
     const kmTravel = Number(document.getElementById('TravelKm').value)
@@ -34,16 +38,15 @@ btnGenera.addEventListener('click',function(){
     const priceTiket = kmTravel * 0.21
     console.log(priceTiket)
 
-
     let discountPrice = priceTiket;
 
     let tiketTipe = 'standard'
 
-    // va applicato uno sconto del 20% per i minorenni
-    if (userAge == 'minorenne' ) {
+    // va applicato uno sconto del 20% per i minorenni e tipo di biglietto ridotto
+    if (userAge == 'minorenne') {
         discountPrice = priceTiket * 0.8
         tiketTipe = 'ridotto'
-    // va applicato uno sconto del 40% per gli over 65.
+        // va applicato uno sconto del 40% per gli over 65 e tipo di biglietto ridotto
     } else if (userAge == 'over') {
         discountPrice = priceTiket * 0.6
         tiketTipe = 'ridotto'
@@ -51,12 +54,30 @@ btnGenera.addEventListener('click',function(){
         discountPrice = priceTiket
     };
 
+    // stampare il tipo di biglietto    
     document.getElementById('type_tiket').innerHTML = tiketTipe
+
     // stampare il prezzo in forma decimale.
     const endPrice = discountPrice.toFixed(2);
     console.log(endPrice);
 
+    const userName = document.getElementById("user_name").value
+    console.log(userName);
 
+    document.getElementById('name_passenger').innerHTML = userName
+
+    const numberCab = Number(Math.floor((Math.random() * 10) + 1))
+    document.getElementById('cab_number').innerHTML = ` N° ${numberCab}`
+
+    document.getElementById("price_tiket").innerHTML = endPrice
+    
+    const capNumber = Math.floor(Math.random()*90000) + 10000; 
+    console.log(capNumber)
+    document.getElementById("number_cup").innerHTML = capNumber
+
+    
+
+    
 })
 
 
