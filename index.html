@@ -12,17 +12,23 @@
     <h1>CALCOLA IL PREZZO DEL TUO BIGLIETTO</h1>
    </header>
    <main>
-    <div class="container">
-
-        <input type="text" placeholder="Inserisci la tua età" id="age">
-        <input type="text" placeholder="Inserisci i km" id="km">
+    <div class="container"> 
+        <select name="cars" id="age">
+            <option value="maggiorenne">Maggiorenne</option>
+            <option value="minorenne">Minorenne</option>
+            <option value="over">Over 60</option>
+        </select>
+        <input type="text" placeholder="Inserisci i km" id="TravelKm">
         <button id="generate">GENERA</button>
         <button id="reset">ANNULLA</button>
 
+
+
+        <span id="type_tiket"></span>
     </div>
    </main>
 
-    <h id="price_tiket"></h>
+    <h1 id="price_tiket"></h1>
 
     <script src="./asset/js/main.js"></script>
 </body>

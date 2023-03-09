@@ -1,6 +1,8 @@
 
 /* 
 Il programma dovrà chiedere all'utente il numero di chilometri che vuole percorrere e l'età del passeggero.
+
+
 Sulla base di queste informazioni dovrà calcolare il prezzo totale del viaggio, secondo queste regole:
 // il prezzo del biglietto è definito in base ai km (0.21 € al km)
 // va applicato uno sconto del 20% per i minorenni
@@ -18,6 +20,50 @@ Sulla base di queste informazioni dovrà calcolare il prezzo totale del viaggio,
 
 const generateBtn = document.getElementById("generate")
 console.log (generateBtn)
+
+// prende i dati dell'inputbox tramite il bottone
+const btnGenera = document.getElementById("generate")
+btnGenera.addEventListener('click',function(){
+
+    const userAge = (document.getElementById('age').value)
+    const kmTravel = Number(document.getElementById('TravelKm').value)
+
+    console.log(userAge)
+    console.log(kmTravel)
+
+    const priceTiket = kmTravel * 0.21
+    console.log(priceTiket)
+
+
+    let discountPrice = priceTiket;
+
+    let tiketTipe = 'standard'
+
+    // va applicato uno sconto del 20% per i minorenni
+    if (userAge == 'minorenne' ) {
+        discountPrice = priceTiket * 0.8
+        tiketTipe = 'ridotto'
+    // va applicato uno sconto del 40% per gli over 65.
+    } else if (userAge == 'over') {
+        discountPrice = priceTiket * 0.6
+        tiketTipe = 'ridotto'
+    } else if (userAge == 'maggiorenne') {
+        discountPrice = priceTiket
+    };
+
+    document.getElementById('type_tiket').innerHTML = tiketTipe
+    // stampare il prezzo in forma decimale.
+    const endPrice = discountPrice.toFixed(2);
+    console.log(endPrice);
+
+
+})
+
+
+
+//
+
+
 
 /* 
 
