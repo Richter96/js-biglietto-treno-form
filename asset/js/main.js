@@ -22,10 +22,10 @@ Sulla base di queste informazioni dovrà calcolare il prezzo totale del viaggio,
 
 
 // prende i dati dell'inputbox tramite il bottone
-const btnGenera = document.getElementById("generate")
+const btnGenera = document.getElementById("generate");
 
-const cabClass = document.querySelector('.cab').classList
-    cabClass.add("flex-column")
+const cabClass = document.querySelector('.cab').classList;
+    cabClass.add("flex-column");
 
 btnGenera.addEventListener('click', function () {
 
@@ -40,7 +40,7 @@ btnGenera.addEventListener('click', function () {
 
     let discountPrice = priceTiket;
 
-    let tiketTipe = 'standard'
+    let tiketTipe = 'standard';
 
     // va applicato uno sconto del 20% per i minorenni e tipo di biglietto ridotto
     if (userAge == 'minorenne') {
@@ -50,9 +50,7 @@ btnGenera.addEventListener('click', function () {
     } else if (userAge == 'over') {
         discountPrice = priceTiket * 0.6
         tiketTipe = 'ridotto'
-    } else if (userAge == 'maggiorenne') {
-        discountPrice = priceTiket
-    };
+    }
 
     // stampare il tipo di biglietto    
     document.getElementById('type_tiket').innerHTML = tiketTipe
@@ -73,52 +71,7 @@ btnGenera.addEventListener('click', function () {
     
     const capNumber = Math.floor(Math.random()*90000) + 10000; 
     console.log(capNumber)
-    document.getElementById("number_cup").innerHTML = capNumber
-
-    
-
-    
+    document.getElementById("number_cap").innerHTML = capNumber
 })
 
 
-
-//
-
-
-
-/* 
-
-// chiedere età e i km da percorrere.
-const userAge = parseInt(("Quale è la tua età?"));
-const kmTravel = ("Quanti km dovrai percorrere?");
-
-// caricare consol.log
-console.log(userAge);
-console.log(kmTravel);
-
-// Calclare il prezzo del biglietto.
-const priceTiket = kmTravel * 0.21;
-console.log(priceTiket);
-
-
-
-let discountPrice = priceTiket;
-
-// va applicato uno sconto del 20% per i minorenni
-if (userAge < 18) {
-    discountPrice = priceTiket * 0.8
-// va applicato uno sconto del 40% per gli over 65.
-} else if (userAge >= 65) {
-    discountPrice = priceTiket * 0.6
-};
-
-// stampare il prezzo in forma decimale.
-const endPrice = discountPrice.toFixed(2);
-console.log(endPrice);
-
-
-if (isNaN(endPrice)) {
-    alert('ciao, devi inserire nei campi dei numeri e non dei testi!!!')
-} else {
-    document.getElementById("price_tiket").innerHTML = `Questo è il prezzo del biglietto: ${endPrice}€` 
-} */
